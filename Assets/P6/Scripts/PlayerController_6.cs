@@ -16,17 +16,13 @@ public class PlayerController_6 : MonoBehaviour
     [SerializeField] private ParticleSystem dirtParticle; //переменна€ дл€ манипул€ции анимационным эффектом гр€зи 
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip crashSound; 
-    void OnEnable()
-    {
-        EventManager.OnGameAction();
-    }
     void Start()
     {
         playerRb = GetComponent<Rigidbody>(); 
         Physics.gravity *= gravityModifier; 
         playerAnim = GetComponent<Animator>(); 
         playerAudio = GetComponent<AudioSource>();
-        
+        EventManager.OnGameAction();
     }
 
     void Update()

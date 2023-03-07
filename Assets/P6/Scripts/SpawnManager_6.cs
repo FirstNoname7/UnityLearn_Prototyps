@@ -14,8 +14,14 @@ public class SpawnManager_6 : MonoBehaviour
     void Start()
     {
         EventManager.GameOver += End;
-        InvokeRepeating("SpawnObstacle", startDelay, spawnInterval);
+        //EventManager.GameAction += PreviousSpawner;
+        PreviousSpawner();
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController_6>();
+    }
+
+    void PreviousSpawner()
+    {
+        InvokeRepeating("SpawnObstacle", startDelay, spawnInterval);
     }
 
     void SpawnObstacle()
